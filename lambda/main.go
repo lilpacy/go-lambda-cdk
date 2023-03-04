@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 	"time"
 )
@@ -16,13 +15,16 @@ type MyEvent struct {
 	Name string `json:"name"`
 }
 
+type MyResponse struct {
+	Message string `json:"message"`
+}
+
 // HandleRequest ...
-func HandleRequest(ctx context.Context) (events.APIGatewayProxyResponse, error) {
+func HandleRequest(ctx context.Context) (MyResponse, error) {
 	t := time.Now()
 	message := createMessage(t)
-	res := events.APIGatewayProxyResponse{
-		StatusCode: 200,
-		Body:       message,
+	res := MyResponse{
+		Message: message,
 	}
 	return res, nil
 }

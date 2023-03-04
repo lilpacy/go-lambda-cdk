@@ -14,11 +14,7 @@ npm run build # linux向けにバイナリビルド
 
 # lambda単体実行
 # sam local invoke ResourceName -t path/to/Stack.template.json
-sam local invoke GoFunction -e lambda/event.json -t cdk.out/ApiStack.template.json
-
-# api-gatewayとセットで実行
-# sam local start-api -t path/to/Stack.template.json
-sam local start-api -t cdk.out/ApiStack.template.json
+sam local invoke GoFunction -e lambda/event.json -t cdk.out/LambdaStack.template.json
 ```
 
 ## デプロイ手順
