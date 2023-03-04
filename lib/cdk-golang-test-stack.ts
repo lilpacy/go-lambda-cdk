@@ -1,5 +1,5 @@
 import * as cdk from '@aws-cdk/core';
-import {LambdaStack} from "./api-stack";
+import {LambdaStack} from "./lambda-stack";
 
 export class CdkGolangTestStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
